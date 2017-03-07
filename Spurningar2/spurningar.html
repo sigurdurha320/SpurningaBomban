@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Greetings</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+	.red{
+		background-color: red;
+		border: 5px solid black;
+	}
+	.green{
+		background-color: green;
+		border: 5px solid black;
+	}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div id="spurning"></div>
+		<div id="val"></div>
+	</div>
+	<h2>dæmi 1:</h2>
+	<pre>
+	1:
+		&lta onclick="adferd">txt&lta>
+
+		function adferd(){alert("hello")}
+		//static, do not use. bad practis
+
+
+	2:
+		&lta id="A">txt&lta>
+
+		var A = document.getElementById('A');
+		function adferd(){alert("hello")}
+		A.click = adferd;
+		//second best
+
+	3:
+		&lta id="A">txt&lta>
+
+		var A = document.getElementById('A');
+		function adferd(){alert("hello")}
+		A.addEventListener("click", adferd, false);
+		// 10/10 would use.
+	</pre>
+	<h2>dæmi 2:</h2>
+	<p>Það er leið til að keira marga kóða á sama tíma (svona svindl til að multi threada)</p>
+	<h2>dæmi 3:</h2>
+	<p>"hlustari", bara eins og if settning sem er kallað á þegar það er true.</p>
+	<h2>dæmi 4:</h2>
+	<pre>
+		function checkUsername(e) {//bæt við e
+		var target = e.target;
+		}
+		var el = document.getElementById('username');
+		el.addEventListener('click', checkUsername, false); 
+	</pre>
+	<h2>dæmi 5:</h2>
+	<p>false: leitar frá ista hlustanda greinunum.    true: leitar frá stofninum (document, held ég)</p>
+	<h2>dæmi 6:</h2>
+	<ul>
+		<li>a: stöðvar alla hlustanda sem ætla að keira(sem dæmi ef einungis ein á að renna)</li>
+		<li>b: kemur í veg fyrir að html tög gera sínu hluti eins og 'a' getur ekki skipt um síðu.</li>
+	</ul>
+
+	<script src="spurningar.js"></script>
+</body>
+</html>
